@@ -16,13 +16,29 @@ jobs:
       run: sudo xcode-select -s '/Applications/Xcode_11.4.app/Contents/Developer'
     - name: Show versions 
       run: |
+        echo -n "MacOS: "
+        sw_vers -productVersion
+        echo -n "Xcode: "
         xcodebuild -version
+        echo -n "Swift: "
         swift -version
+        echo -n "Carthage: "
         carthage version
     - name: Carthage Update
       run: carthage update --platform iOS --cache-builds
     - name: Xcode Build
-      run: xcodebuild -scheme TestApp -sdk iphonesimulator -configuration Debug build
-    - name: Show Artifacts
-      run: ls -la DerivedData/TestApp/Build/Products/Debug-iphonesimulator/
+      run: |
+        xcodebuild -derivedDataPath DerivedData \
+          -scheme TestApp \
+          -sdk iphonesimulator \
+          -configuration Debug \
+          -archivePath DerivedData/Archive/TestApp archive
+    - name: Show Archives
+      run: ls -la DerivedData/Archive/
+    #- name: Export Archive
+    #  run: |
+    #    xcodebuild -exportArchive \
+    #      -archivePath DerivedData/Archive/TestApp.xcarchive \
+    #      -exportOptionsPlist provisioning/App-Store.plist \
+    #      -exportPath DerivedData/ipa
 
