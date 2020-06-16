@@ -8,6 +8,7 @@
 
 import UIKit
 import TestFramework
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Use TestFramework Hoge class
+        // Use TestFramework installed by SwiftPM
         let hoge = Hoge()
         hoge.a()
+        
+        // Use SwiftyJSON installed by Carthage
+        if let data = "{\"hoge\": \"fuga\" }".data(using: .utf8) {
+            let json = try! JSON(data: data)
+            print(json["hoge"])
+        }
         
         // Override point for customization after application launch.
         return true

@@ -16,8 +16,6 @@
 		15320A182498F90A00956924 /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15320A172498F90A00956924 /* TestAppTests.swift */; };
 		15320A232498F90A00956924 /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15320A222498F90A00956924 /* TestAppUITests.swift */; };
 		15A69518249910FC00DCDD83 /* TestFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 15A69517249910FC00DCDD83 /* TestFramework */; };
-		15A6951B249914FA00DCDD83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6951A249914FA00DCDD83 /* SwiftyJSON.framework */; };
-		15A6951C249914FB00DCDD83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6951A249914FA00DCDD83 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15A6951F2499163100DCDD83 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A6951E2499163100DCDD83 /* Cartfile */; };
 		15A695212499163900DCDD83 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 15A695202499163800DCDD83 /* Cartfile.resolved */; };
 /* End PBXBuildFile section */
@@ -38,20 +36,6 @@
 			remoteInfo = TestApp;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		15A6951D249914FB00DCDD83 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				15A6951C249914FB00DCDD83 /* SwiftyJSON.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		153209FD2498F90800956924 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15A6951B249914FA00DCDD83 /* SwiftyJSON.framework in Frameworks */,
 				15A69518249910FC00DCDD83 /* TestFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +164,7 @@
 				153209F92498F90800956924 /* Sources */,
 				153209FA2498F90800956924 /* Frameworks */,
 				153209FB2498F90800956924 /* Resources */,
-				15A6951D249914FB00DCDD83 /* Embed Frameworks */,
+				15A695222499193D00DCDD83 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -305,6 +288,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15A695222499193D00DCDD83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		153209F92498F90800956924 /* Sources */ = {
