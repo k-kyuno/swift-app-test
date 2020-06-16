@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		15320A0D2498F90A00956924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15320A0B2498F90A00956924 /* LaunchScreen.storyboard */; };
 		15320A182498F90A00956924 /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15320A172498F90A00956924 /* TestAppTests.swift */; };
 		15320A232498F90A00956924 /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15320A222498F90A00956924 /* TestAppUITests.swift */; };
+		15A69518249910FC00DCDD83 /* TestFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 15A69517249910FC00DCDD83 /* TestFramework */; };
+		15A6951B249914FA00DCDD83 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6951A249914FA00DCDD83 /* SwiftyJSON.framework */; };
+		15A6951C249914FB00DCDD83 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6951A249914FA00DCDD83 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15A6951F2499163100DCDD83 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A6951E2499163100DCDD83 /* Cartfile */; };
+		15A695212499163900DCDD83 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 15A695202499163800DCDD83 /* Cartfile.resolved */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		15A6951D249914FB00DCDD83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15A6951C249914FB00DCDD83 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		153209FD2498F90800956924 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15320A002498F90800956924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +68,9 @@
 		15320A1E2498F90A00956924 /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15320A222498F90A00956924 /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
 		15320A242498F90A00956924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15A6951A249914FA00DCDD83 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		15A6951E2499163100DCDD83 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		15A695202499163800DCDD83 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A6951B249914FA00DCDD83 /* SwiftyJSON.framework in Frameworks */,
+				15A69518249910FC00DCDD83 /* TestFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +103,13 @@
 		153209F42498F90800956924 = {
 			isa = PBXGroup;
 			children = (
+				15A695202499163800DCDD83 /* Cartfile.resolved */,
+				15A6951E2499163100DCDD83 /* Cartfile */,
 				153209FF2498F90800956924 /* TestApp */,
 				15320A162498F90A00956924 /* TestAppTests */,
 				15320A212498F90A00956924 /* TestAppUITests */,
 				153209FE2498F90800956924 /* Products */,
+				15A69519249914FA00DCDD83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +163,14 @@
 			path = TestAppUITests;
 			sourceTree = "<group>";
 		};
+		15A69519249914FA00DCDD83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15A6951A249914FA00DCDD83 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,12 +181,16 @@
 				153209F92498F90800956924 /* Sources */,
 				153209FA2498F90800956924 /* Frameworks */,
 				153209FB2498F90800956924 /* Resources */,
+				15A6951D249914FB00DCDD83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TestApp;
+			packageProductDependencies = (
+				15A69517249910FC00DCDD83 /* TestFramework */,
+			);
 			productName = TestApp;
 			productReference = 153209FD2498F90800956924 /* TestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 153209F42498F90800956924;
+			packageReferences = (
+				15A69516249910FC00DCDD83 /* XCRemoteSwiftPackageReference "swift-framework-test" */,
+			);
 			productRefGroup = 153209FE2498F90800956924 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +284,8 @@
 			files = (
 				15320A0D2498F90A00956924 /* LaunchScreen.storyboard in Resources */,
 				15320A0A2498F90A00956924 /* Preview Assets.xcassets in Resources */,
+				15A6951F2499163100DCDD83 /* Cartfile in Resources */,
+				15A695212499163900DCDD83 /* Cartfile.resolved in Resources */,
 				15320A072498F90A00956924 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,9 +478,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 562D52329M;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tokyo.mizumizu.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,9 +504,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 562D52329M;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tokyo.mizumizu.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -588,6 +646,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15A69516249910FC00DCDD83 /* XCRemoteSwiftPackageReference "swift-framework-test" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/k-kyuno/swift-framework-test";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15A69517249910FC00DCDD83 /* TestFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15A69516249910FC00DCDD83 /* XCRemoteSwiftPackageReference "swift-framework-test" */;
+			productName = TestFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 153209F52498F90800956924 /* Project object */;
 }
